@@ -13,6 +13,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -20,25 +21,30 @@ body {
     background: black;
     display: flex;
     height: 100vh;
-    justify-content: center;
-    
+    justify-content: center;    
 
 }
 
+:root {
+    --slide-width: 200px;  
+    --total-slides: 36;
+  
+}
+  
 .slider {
     background: pr;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
-    height: 80px;
+    height: 120px;
     margin: auto;
     overflow: hidden;
     position: relative;
-    width: 3840px;
+    width: 100%;
 }
 
 .slider::before, .slider::after {
     background: linear-gradient(to right, black 0%, rgba(255, 255, 255, 0) 100%);
     content: "";
-    height: 80px;
+    height: 120px;
     position: absolute;
     width: 200px;
     z-index: 2;
@@ -47,7 +53,6 @@ body {
 .slider::after {
     right: 0;
     top: 0;
-    -webkit-transform: rotateZ(180deg);
     transform: rotateZ(180deg);
 }
 
@@ -59,20 +64,27 @@ body {
 .slider .slide-track {
     animation: scroll 50s linear infinite;
     display: flex;
-    width: max-content;
+    width: calc(var(--slide-width) * var(--total-slides) * 2);
 
 }
 
 .slider .slide-track:hover {
     animation-play-state: paused;
 }
-
-.slider .slide {
-    height: 100px;
-    padding-left: 50px;
-    padding-right: 50px;
+  
+.slide {
+    width: var(--slide-width);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
 }
 
+.slide img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
 
 @keyframes scroll {
     0% {
@@ -80,6 +92,8 @@ body {
     }
     100% {
         transform: translateX(-50%);
+            calc(-1 * var(--slide-width) * var(--total-slides))
+      );
     }
 }
 </style>
@@ -93,7 +107,7 @@ body {
           <img src="gene_2.png">
         </div>
         <div class="slide">
-          <img src="ATM.PNG" height="100" alt="" />
+          <img src="ATM.PNG" alt="" />
         </div>
         <div class="slide">
           <img src="CGIM_lLetres_blanc.png" height="100" alt="" />
@@ -286,6 +300,7 @@ body {
   
 
   </html>
+
 
 
 
