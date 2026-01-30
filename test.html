@@ -59,7 +59,7 @@ body {
 .slider .slide-track {
     animation: scroll 50s linear infinite;
     display: flex;
-    width: calc(250px * 60);
+    width: max-content;
 
 }
 
@@ -79,7 +79,7 @@ body {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-250px * 18));
+        transform: translateX(-50%);
     }
 }
 </style>
@@ -286,6 +286,7 @@ body {
   
 
   </html>
+
 
 
 
