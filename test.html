@@ -27,7 +27,8 @@ body {
 
 :root {
     --slide-width: 200px;  
-    --total-slides: 10;
+    --total-slides: 20;
+    --scroll-duration: 25s; /*Amb aixo edites la velocitat*/
   
 }
   
@@ -62,9 +63,9 @@ body {
 }
 
 .slider .slide-track {
-    animation: scroll 50s linear infinite;
+    animation: scroll var(--scroll-duration) linear infinite;
     display: flex;
-    width: calc(var(--slide-width) * var(--total-slides) * 2);
+    width: max-content;
 
 }
 
@@ -73,7 +74,7 @@ body {
 }
   
 .slide {
-    width: var(--slide-width);
+   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,8 +94,6 @@ body {
     }
     100% {
         transform: translateX(-50%);
-            calc(-1 * var(--slide-width) * var(--total-slides))
-      );
     }
 }
 </style>
@@ -108,10 +107,13 @@ body {
           <img src="gene_2.png">
         </div>
         <div class="slide">
-          <img src="ATM.PNG" alt="" />
+          <img src="ATM_logo_1.png" alt="" />
         </div>
         <div class="slide">
           <img src="CGIM_lLetres_blanc.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="amb.png" height="100" alt="" />
         </div>
         <div class="slide">
           <img src="AJBCN_Sign_Com_Blanc_Transparent.png" alt="" />
@@ -204,7 +206,19 @@ body {
           <img src="Logotips operadors_2-33.png" height="100" alt="" />
         </div>
         <div class="slide">
-          <img src="ATM.PNG" height="100" alt="" />
+          <img src="gene_2.png">
+        </div>
+        <div class="slide">
+          <img src="ATM_logo_1.png" alt="" />
+        </div>
+        <div class="slide">
+          <img src="CGIM_lLetres_blanc.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="amb.png" height="100" alt="" />
+        </div>
+        <div class="slide">
+          <img src="AJBCN_Sign_Com_Blanc_Transparent.png" alt="" />
         </div>
         <div class="slide">
           <img src="Logotips operadors-03.png" height="100" alt="" />
